@@ -1,0 +1,86 @@
+.resize {
+  position: relative;
+  width:    960px;
+  margin:   0 auto;
+}
+
+.cf:after, .cf:before {
+  content: '';
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+}
+
+.bodyWrapper {
+  max-width:          1920px;
+  min-width:          960px;
+  margin:             0 auto;
+  position:           relative;
+  -webkit-box-shadow: 0 0 10px 0 black;
+  -moz-box-shadow:    0 0 10px 0 black;
+  box-shadow:         0 0 10px 0 black;
+  overflow:           hidden;
+  height:             auto;
+}
+
+.headerWrapper {
+  position: relative;
+  .menu-top {
+    .logo {
+      position: absolute;
+      top:      30px;
+      left:     40px;
+    }
+    width: 1920px;
+    left: 50%;
+    margin-left: -960px;
+    top:            0;
+    position:       absolute;
+    text-align:     right;
+    background:     rgba(6, 6, 6, 0.6);
+    height:         100px;
+    vertical-align: middle;
+    ul {
+      li {
+        list-style-type: none;
+        display:         inline-block;
+        display:         inline-block;
+        margin:          0 20px;
+        font-family:     Myriad Pro;
+        font-size:       21px;
+        line-height:     100px;
+        a {
+          text-decoration: none;
+          color:           #ffffff;
+        }
+      }
+    }
+  }
+  .headerBlock {
+    .slogon{
+      p{
+        font-size: 48px;
+        color:           #ffffff;
+        line-height:     500px;
+        font-family:     Myriad Pro;
+        text-align: center;
+      }
+    }
+  }
+}
+
+#header {
+  background:      url("../../zenmate/design/laptop.jpg") no-repeat;
+  height:          500px;
+  background-size: cover;
+}
