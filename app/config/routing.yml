@@ -1,3 +1,9 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+AppBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: AppBundle:Page:contact }
+    requirements:
+        _method:  GET|POST
