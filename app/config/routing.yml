@@ -7,3 +7,10 @@ AppBundle_contact:
     defaults: { _controller: AppBundle:Page:contact }
     requirements:
         _method:  GET|POST
+
+AppBundle_blog_show:
+    pattern:  /{id}
+    defaults: { _controller: AppBundle:Page:show }
+    requirements:
+        _method:  GET
+        id: \d+
