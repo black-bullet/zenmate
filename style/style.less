@@ -29,13 +29,15 @@ ul {
   -webkit-box-shadow: 0 0 10px 0 black;
   -moz-box-shadow:    0 0 10px 0 black;
   box-shadow:         0 0 10px 0 black;
-  overflow:           hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height:             auto;
 }
 
 .headerWrapper {
   position: relative;
   .menu-top {
+    z-index: 100;
     .logo {
       position: absolute;
       top:      30px;
@@ -71,9 +73,10 @@ ul {
       p{
         font-size: 48px;
         color:           #ffffff;
-        line-height:     500px;
+        padding-top: 200px;
         font-family:     Myriad Pro;
         text-align: center;
+        margin: 0;
       }
     }
   }
@@ -83,4 +86,93 @@ ul {
   background:      url("../../zenmate/design/laptop.jpg") no-repeat;
   height:          500px;
   background-size: cover;
+}
+
+.mainWrapper{
+  .work{
+    height: 480px;
+    background-color: #fff;
+    h2{
+      font-size: 48px;
+      color:           #333333;
+      line-height:     190px;
+      font-family:     Myriad Pro;
+      text-align: center;
+    }
+    ul{
+      text-align: center;
+      li{
+        list-style-type: none;
+        display: inline-block;
+        width: 195px;
+        height: 205px;
+        cursor: pointer;
+        vertical-align: top;
+        p{
+          color: #666666;
+          font-size: 24px;
+          font-family: Myriad Pro;
+        }
+        img{
+          display: block;
+          margin: 0 auto;
+          -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          transition: all 1s ease;
+          &:hover{
+            width: 150px;
+            height: 150px;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+          }
+        }
+      }
+    }
+  }
+  .our-technologies{
+    height: 580px;
+    background-color: #f9f9f9;
+    h2{
+      font-size: 48px;
+      color:           #333333;
+      line-height:     100px;
+      font-family:     Myriad Pro;
+      text-align: center;
+    }
+    ul{
+      text-align: center;
+      li{
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 15px;
+        img{
+          -webkit-filter: sepia(100%);
+          -moz-filter: sepia(100%);
+          -o-filter: sepia(100%);
+          filter: sepia(100%);
+          -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+          -o-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+          transition: all 1s ease;
+          &:hover{
+            -webkit-filter: sepia(0);
+            -moz-filter: sepia(0);
+            -o-filter: sepia(0);
+            filter: sepia(0);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+          }
+        }
+      }
+    }
+  }
 }
