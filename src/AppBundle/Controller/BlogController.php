@@ -6,6 +6,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BlogController extends Controller
 {
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()
+            ->getEntityManager();
+
+        $blogs = $em->createQueryBuilder()
+            ->select('b')
+            ->from('AppBundle:Blog',  'b')
+            ->addOrderBy('b.created', 'DESC')
+            ->getQuery()
+            ->getResult();
+
+        return $this->render('AppBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
+    }
+
     /**
      * Show a blog entry
      */
