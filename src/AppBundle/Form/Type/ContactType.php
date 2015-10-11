@@ -22,17 +22,17 @@ class ContactType extends AbstractType
             ->add('message', 'textarea');
     }
 
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Contact',
-            'csrf_protection' => false,
-            'allow_extra_fields' => true
-        ));
-    }
+//    /**
+//     * @param OptionsResolverInterface $resolver
+//     */
+//    public function configureOptions(OptionsResolver $resolver)
+//    {
+//        $resolver->setDefaults(array(
+//            'data_class' => 'AppBundle\Entity\Contact',
+//            'csrf_protection' => false,
+//            'allow_extra_fields' => true
+//        ));
+//    }
 
     /**
      * @return string

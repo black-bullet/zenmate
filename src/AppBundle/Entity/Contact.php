@@ -8,6 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
  * @ORM\Table(name="contacts")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Contact
 {
@@ -59,8 +60,6 @@ class Contact
 
     /**
      * @ORM\Column(type="datetime", length=30, nullable=false)
-     * @Assert\Length(max=30)
-     * @Assert\NotBlank()
      * @var \DateTime
      */
     private $createdAt;
