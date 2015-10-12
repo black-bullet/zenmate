@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zenmate</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/owl.carousel.css">
+</head>
+<body class="bodyWrapper">
+    <header class=" headerWrapper">
+        <div class="headerBlock resize">
+        </div>
+    </header>
+    <div class="sliderWrapper cf">
+        <div class="sliderBlock resize cf">
+            <h2>Наші проекти</h2>
+            <div id="owl-demo" class="owl-carousel">
+                <div class="item slide1">
+                    <img src="img/slide1.jpg" alt="">
+                </div>
+                <div class="item slide2">
+                    <img src="img/slide2.jpg" alt="">
+                </div>
+                <div class="item slide2">
+                    <img src="img/slide3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footerWrapper cf">
+        <div class="footerWrapper resize cf">
+            <div class="left">
+                <img src="img/logo_2.png" alt="">
+                <ul>
+                    <li>
+                        <a href="#">Проекти</a>
+                    </li>
+                    <li>
+                        <a href="#">Послуги</a>
+                    </li>
+                    <li>
+                        <a href="#">Блог</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакти</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="tags"> 
+                <a href="http://vk.com/"  style="font-size:23px;">HTML</a> 
+                <a href="#" style="font-size:12px;">CSS</a> 
+                <a href="#" target="_blank" style="font-size:16px;">Java Script</a> 
+                <a href="#" style="font-size:15px;">PHP</a> 
+                <a href="#" style="font-size:21px;">Laravel</a> 
+                <a href="#" style="font-size:20px;">Angular</a> 
+                <a href="#" style="font-size:18px;">Ajax</a> 
+                <a href="#" style="font-size:17px;">Python</a> 
+                <a href="#" style="font-size:19px;">Ruby</a> 
+                <a href="#" style="font-size:21px;">Symfony</a> 
+                <a href="#" style="font-size:23px;">Yii2</a> 
+            </div> 
+            <div class="right">
+                <h3>Zenmate</h3>
+                <p>zenmate@gmail.com</p>
+                <p class="tel">1-888 564-5555</p>
+                <p class="callback">
+                    або зв’яжіться з нами в соц. мережах
+                </p>
+                <a href="#"><img src="img/facebook.png" alt=""></a>
+                <a href="#"><img src="img/twitter.png" alt=""></a>
+                <a href="#"><img src="img/google.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+    <script type="text/javascript" src="swfobject.js"></script> 
+<script type="text/javascript"> 
+    function  myTags(mytags){
+        mytags=mytags.replace(/<A/g, '<a')
+            .replace(/\/A>/g, "/a>")
+            .replace(/(\starget=_)(\w*)/g, ' target="_$2"')
+            .replace(/(\sclass=)(?!")(\w*)/g, ' class="$2"')
+            .replace(/(\sname=)(?!")(\w*)/g, ' name="$2"')
+            .replace(/(\sid=)(?!")(\w*)/g, ' id="$2"')
+            .replace(/(\srel=)(?!")(\w*)/g, ' rel="$2"');
+        mytags=encodeURIComponent(mytags).replace(/!/g, '%21')
+            .replace(/'/g, '%27').replace(/\(/g, '%28')
+            .replace(/\)/g, '%29').replace(/\*/g, '%2A');
+        var rnumber = Math.floor(Math.random()*9999999);
+        var flashvars = {
+            tcolor:"0x2A62C8",
+            tcolor2:"0x000000",
+            hicolor:"0xB12AC8",
+            tspeed:"110",
+            distr:"true",
+            mode:"tags",
+            tagcloud:mytags
+        };
+        var params = {
+            allowScriptAccess:"always",
+            wmode:'transparent'
+        };
+        var attributes = {
+            id:"flash_cloud"
+        };
+        swfobject.embedSWF("tagcloud.swf?r="+rnumber,
+                           "tags", "490", "300", "9.0.0",
+                           "expressInstall.swf", flashvars,
+                           params, attributes);
+    }
+ 
+    window.onload=function(){ 
+        var mytags="<tags>"
+        +document.getElementById('tags').innerHTML
+        +"</tags>";
+        myTags(mytags);
+    };
+</script> 
+</body>
+</html>
