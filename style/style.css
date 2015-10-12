@@ -70,7 +70,7 @@ ul {
   margin: 0;
 }
 #header {
-  background: url("../../zenmate/design/laptop.jpg") no-repeat;
+  background: url("../design/laptop.jpg") no-repeat;
   height: 500px;
   background-size: cover;
 }
