@@ -55,8 +55,15 @@ class PagesController extends Controller
         $tagWeights = $em->getRepository('AppBundle:Blog')
             ->getTagWeights($tags);
 
+
+        $commentLimit   = $this->container
+            ->getParameter('app.comments.latest_comment_limit');
+        $latestComments = $em->getRepository('AppBundle:Comment')
+            ->getLatestComments($commentLimit);
+
         return $this->render('AppBundle:Page:sidebar.html.twig', array(
-            'tags' => $tagWeights
+            'latestComments'    => $latestComments,
+            'tags'              => $tagWeights
         ));
     }
 }
