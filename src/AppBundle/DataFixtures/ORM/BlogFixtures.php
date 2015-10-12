@@ -69,7 +69,7 @@ class BlogFixtures extends AbstractFixture implements OrderedFixtureInterface
         );
         $blog4->setImage('four.jpg');
         $blog4->setAuthor('Євгеній Жолкевський');
-        $blog4->setTags('blog', 'symfony', 'yii', 'php');
+        $blog4->setTags('blog, symfony, yii, php');
         $manager->persist($blog4);
 
         $manager->flush();

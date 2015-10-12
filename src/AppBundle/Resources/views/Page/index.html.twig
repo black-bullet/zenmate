@@ -16,7 +16,7 @@
             </div>
 
             <footer class="meta">
-                <p>Коментарі: </p>
+                <p>Коментарі: <a href="{{ path('AppBundle_blog_show', { 'id': blog.id }) }}#comments">{{ blog.comments|length }}</a></p>
                 <p>Опубліковано <span class="highlight">{{blog.author}}</span> at {{ blog.createdAt|date('h:iA', "Europe/Kiev") }}</p>
                 <p>Мітки: <span class="highlight">{{ blog.tags }}</span></p>
             </footer>
