@@ -9,14 +9,14 @@ AppBundle_contact:
         _method:  GET|POST
 
 AppBundle_blog_show:
-    pattern:  /{id}
+    pattern:  /blog/{id}
     defaults: { _controller: AppBundle:Blogs:show }
     requirements:
         _method:  GET
         id: \d+
 
-AppBundle_homepage:
-    pattern:  /
+AppBundle_blog:
+    pattern:  /blog
     defaults: { _controller: AppBundle:Pages:index }
     requirements:
         _method:  GET
@@ -27,3 +27,9 @@ AppBundle_comment_create:
     requirements:
         _method:  POST
         blog_id: \d+
+
+AppBundle_homepage:
+    pattern:  /
+    defaults: { _controller: AppBundle:Default:index }
+    requirements:
+        _method: GET

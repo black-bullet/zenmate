@@ -3,53 +3,141 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
-    <title>{% block title %}symblog{% endblock %} - symblog</title>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>Zenmate</title>
     {% block stylesheets %}
         <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+        {#<link rel="stylesheet" href="style/reset.css">#}
+        {#<link rel="stylesheet" href="style/style.css" type="text/css">#}
+        {#<link rel="stylesheet" href="style/owl.carousel.css">#}
+        <link href="{{ asset('style/reset.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('style/style.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('style/owl.carousel.css') }}" type="text/css" rel="stylesheet" />
         <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" />
+
     {% endblock %}
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 </head>
-<body>
+<body class="bodyWrapper">
 
 <section id="wrapper">
-    <header id="header">
-        <div class="top">
-            {% block navigation %}
-                <nav>
-                    <ul class="navigation">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            {% endblock %}
+    <header id="header" class="headerWrapper">
+        <div class="menu-top cf">
+            <div class="menu-top-block resize cf">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="logo">
+                </div>
+                <ul>
+                    <li><a href="">Проекти</a></li>
+                    <li><a href="">Послуги</a></li>
+                    <li><a href={{ path("AppBundle_blog") }}>Блог</a></li>
+                    <li><a href={{ path("AppBundle_contact") }}>Контакти</a></li>
+                </ul>
+            </div>
         </div>
-
-        <hgroup>
-            <h2>{% block blog_title %}<a href="#">symblog</a>{% endblock %}</h2>
-            <h3>{% block blog_tagline %}<a href="#">creating a blog in Symfony2</a>{% endblock %}</h3>
-        </hgroup>
+        <div class="headerBlock resize">
+            <div class="slogon">
+                <p>Якість, швидкість, надійність</p>
+            </div>
+        </div>
     </header>
 
     <section class="main-col">
         {% block body %}{% endblock %}
     </section>
-    <aside class="sidebar">
-        {% block sidebar %}{% endblock %}
-    </aside>
 
-    <div id="footer">
-        {% block footer %}
-
-        {% endblock %}
+    <div class="footerWrapper cf">
+        <div class="footerWrapper resize cf">
+            <div class="left">
+                <img src="../img/logo_2.png" alt="">
+                <ul>
+                    <li>
+                        <a href="#">Проекти</a>
+                    </li>
+                    <li>
+                        <a href="#">Послуги</a>
+                    </li>
+                    <li>
+                        <a href="#">Блог</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакти</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="tags">
+                <a href="http://vk.com/"  style="font-size:23px;">HTML</a>
+                <a href="#" style="font-size:12px;">CSS</a>
+                <a href="#" target="_blank" style="font-size:16px;">Java Script</a>
+                <a href="#" style="font-size:15px;">PHP</a>
+                <a href="#" style="font-size:21px;">Laravel</a>
+                <a href="#" style="font-size:20px;">Angular</a>
+                <a href="#" style="font-size:18px;">Ajax</a>
+                <a href="#" style="font-size:17px;">Python</a>
+                <a href="#" style="font-size:19px;">Ruby</a>
+                <a href="#" style="font-size:21px;">Symfony</a>
+                <a href="#" style="font-size:23px;">Yii2</a>
+            </div>
+            <div class="right">
+                <h3>Zenmate</h3>
+                <p>zenmate@gmail.com</p>
+                <p class="tel">1-888 564-5555</p>
+                <p class="callback">
+                    або зв’яжіться з нами в соц. мережах
+                </p>
+                <a href="#"><img src="../img/facebook.png" alt=""></a>
+                <a href="#"><img src="../img/twitter.png" alt=""></a>
+                <a href="#"><img src="../img/google.png" alt=""></a>
+            </div>
+        </div>
     </div>
 </section>
 
+<script type="text/javascript" src={{ asset('js/jquery.min.js') }}></script>
+<script type="text/javascript" src={{ asset('js/js.js') }}></script>
+<script type="text/javascript" src={{ asset('js/owl.carousel.js') }}></script>
+<script type="text/javascript" src={{ asset('js/swfobject.js') }}></script>
+<script type="text/javascript">
+    function  myTags(mytags){
+        mytags=mytags.replace(/<A/g, '<a')
+                .replace(/\/A>/g, "/a>")
+                .replace(/(\starget=_)(\w*)/g, ' target="_$2"')
+                .replace(/(\sclass=)(?!")(\w*)/g, ' class="$2"')
+                .replace(/(\sname=)(?!")(\w*)/g, ' name="$2"')
+                .replace(/(\sid=)(?!")(\w*)/g, ' id="$2"')
+                .replace(/(\srel=)(?!")(\w*)/g, ' rel="$2"');
+        mytags=encodeURIComponent(mytags).replace(/!/g, '%21')
+                .replace(/'/g, '%27').replace(/\(/g, '%28')
+                .replace(/\)/g, '%29').replace(/\*/g, '%2A');
+        var rnumber = Math.floor(Math.random()*9999999);
+        var flashvars = {
+            tcolor:"ffffff",
+            tcolor2:"0x000000",
+            hicolor:"0xB12AC8",
+            tspeed:"110",
+            distr:"true",
+            mode:"tags",
+            tagcloud:mytags
+        };
+        var params = {
+            allowScriptAccess:"always",
+            wmode:'transparent'
+        };
+        var attributes = {
+            id:"flash_cloud"
+        };
+        swfobject.embedSWF("tagcloud.swf?r="+rnumber,
+                "tags", "490", "300", "9.0.0",
+                "expressInstall.swf", flashvars,
+                params, attributes);
+    }
+
+    window.onload=function(){
+        var mytags="<tags>"
+                +document.getElementById('tags').innerHTML
+                +"</tags>";
+        myTags(mytags);
+    };
+</script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>
