@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
  * @ORM\Table(name="comments")
  * @ORM\HasLifecycleCallbacks()
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\CommentRepository")
  */
 class Comment
 {
@@ -40,7 +40,7 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity="Blog", inversedBy="comments")
-     * @ORM\JoinColumn(name="blog_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      * @var /AppBundle/Entity/Blog
      */
     protected $blog;
@@ -56,6 +56,11 @@ class Comment
      * @var \DateTime
      */
     protected $updatedAt;
+
+    public function __construct()
+    {
+        $this->setApproved(true);
+    }
 
     /**
      * @ORM\PreFlush()
