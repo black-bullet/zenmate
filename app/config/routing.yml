@@ -1,6 +1,6 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+#app:
+#    resource: "@AppBundle/Controller/"
+#    type:     annotation
 
 AppBundle_contact:
     pattern:  /contact
@@ -10,7 +10,14 @@ AppBundle_contact:
 
 AppBundle_blog_show:
     pattern:  /{id}
-    defaults: { _controller: AppBundle:Page:show }
+    defaults: { _controller: AppBundle:Blog:show }
     requirements:
         _method:  GET
         id: \d+
+
+AppBundle_homepage:
+    pattern:  /
+    defaults: { _controller: AppBundle:Page:index }
+    requirements:
+        _method:  GET
+

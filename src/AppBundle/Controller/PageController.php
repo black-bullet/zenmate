@@ -4,10 +4,28 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Contact;
 use AppBundle\Form\Type\ContactType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class PageController extends BaseController
+class PageController extends Controller
 {
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()
+            ->getEntityManager();
+
+        $blogs = $em->createQueryBuilder()
+            ->select('b')
+            ->from('AppBundle:Blog', 'b')
+            ->addOrderBy('b.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+
+        return $this->render('AppBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
+    }
+
     public function contactAction(Request $request)
     {
         $entity = new Contact();
