@@ -7,7 +7,7 @@ use AppBundle\Form\Type\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class PageController extends Controller
+class PagesController extends Controller
 {
     public function indexAction()
     {

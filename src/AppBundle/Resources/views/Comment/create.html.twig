@@ -1,0 +1,8 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}Add Comment{% endblock%}
+
+{% block body %}
+    <h1>Створити новий комент "{{ comment.blog.title }}"</h1>
+    {% include 'AppBundle:Comments:form.html.twig' with { 'form': form } %}
+{% endblock %}

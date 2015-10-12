@@ -4,7 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class BlogController extends Controller
+class BlogsController extends Controller
 {
     public function indexAction()
     {
