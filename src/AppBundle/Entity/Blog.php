@@ -52,7 +52,10 @@ class Blog
      */
     private $tags;
 
-//    private $comments;
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="blog")
+     */
+    private $comments;
 
     /**
      * @ORM\Column(type="datetime", length=30, nullable=false)
