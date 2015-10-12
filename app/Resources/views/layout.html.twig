@@ -2,5 +2,7 @@
 {% extends '::base.html.twig' %}
 
 {% block sidebar %}
-    Sidebar content
+    {% block sidebar %}
+        {% render "AppBundle:Page:sidebar" %}
+    {% endblock %}
 {% endblock %}

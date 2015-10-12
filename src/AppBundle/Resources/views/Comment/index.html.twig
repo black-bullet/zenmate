@@ -1,0 +1,12 @@
+{# src/AppBundle/Resources/views/Comment/index.html.twig #}
+
+{% for comment in comments %}
+    <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
+        <header>
+            <p><span class="highlight">{{ comment.user }}</span> commented <time datetime="{{ comment.createdAt|date('c') }}">{{ comment.createdAt|date('l, F j, Y') }}</time></p>
+        </header>
+        <p>{{ comment.comment }}</p>
+    </article>
+{% else %}
+    <p>Коментарів немає</p>
+{% endfor %}

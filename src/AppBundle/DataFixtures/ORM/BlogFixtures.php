@@ -2,11 +2,12 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Blog;
 
-class BlogFixtures implements FixtureInterface
+class BlogFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -68,9 +69,19 @@ class BlogFixtures implements FixtureInterface
         );
         $blog4->setImage('four.jpg');
         $blog4->setAuthor('Євгеній Жолкевський');
-        $blog4->setTags('blog', 'symfony', 'yii', 'php');
+        $blog4->setTags('blog, symfony, yii, php');
         $manager->persist($blog4);
 
         $manager->flush();
+
+        $this->addReference('blog-1', $blog1);
+        $this->addReference('blog-2', $blog2);
+        $this->addReference('blog-3', $blog3);
+        $this->addReference('blog-4', $blog4);
+    }
+
+    public function getOrder()
+    {
+        return 1;
     }
 }

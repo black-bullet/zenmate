@@ -7,7 +7,7 @@ use AppBundle\Form\Type\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class PageController extends Controller
+class PagesController extends Controller
 {
     public function indexAction()
     {
@@ -41,6 +41,29 @@ class PageController extends Controller
         }
         return $this->render('AppBundle:Page:contact.html.twig', array(
             'form' => $form->createView()
+        ));
+    }
+
+    public function sidebarAction()
+    {
+        $em = $this->getDoctrine()
+            ->getEntityManager();
+
+        $tags = $em->getRepository('AppBundle:Blog')
+            ->getTags();
+
+        $tagWeights = $em->getRepository('AppBundle:Blog')
+            ->getTagWeights($tags);
+
+
+        $commentLimit   = $this->container
+            ->getParameter('app.comments.latest_comment_limit');
+        $latestComments = $em->getRepository('AppBundle:Comment')
+            ->getLatestComments($commentLimit);
+
+        return $this->render('AppBundle:Page:sidebar.html.twig', array(
+            'latestComments'    => $latestComments,
+            'tags'              => $tagWeights
         ));
     }
 }

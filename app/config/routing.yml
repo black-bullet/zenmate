@@ -4,20 +4,26 @@
 
 AppBundle_contact:
     pattern:  /contact
-    defaults: { _controller: AppBundle:Page:contact }
+    defaults: { _controller: AppBundle:Pages:contact }
     requirements:
         _method:  GET|POST
 
 AppBundle_blog_show:
     pattern:  /{id}
-    defaults: { _controller: AppBundle:Blog:show }
+    defaults: { _controller: AppBundle:Blogs:show }
     requirements:
         _method:  GET
         id: \d+
 
 AppBundle_homepage:
     pattern:  /
-    defaults: { _controller: AppBundle:Page:index }
+    defaults: { _controller: AppBundle:Pages:index }
     requirements:
         _method:  GET
 
+AppBundle_comment_create:
+    pattern:  /comment/{blog_id}
+    defaults: { _controller: AppBundle:Comments:create }
+    requirements:
+        _method:  POST
+        blog_id: \d+
