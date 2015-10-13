@@ -4,23 +4,27 @@
 {% block title %}Contact{% endblock%}
 
 {% block body %}
-    <header>
-        <h1>Форма зворотнього зв`язку</h1>
-    </header>
+    <div class="contentWrapper">
+        <div class="contentBlock resize cf">
+            <header>
+                <h1>Форма зворотнього зв`язку</h1>
+            </header>
 
-    <p>Що вас цікавить?</p>
+            <p>Що вас цікавить?</p>
 
-    <form action="{{ path('AppBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
-        {{ form_errors(form) }}
+            <form action="{{ path('AppBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
+                {{ form_errors(form) }}
 
-        {{ form_row(form.name) }}
-        {{ form_row(form.surname) }}
-        {{ form_row(form.phone) }}
-        {{ form_row(form.topic) }}
-        {{ form_row(form.message) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.surname) }}
+                {{ form_row(form.phone) }}
+                {{ form_row(form.topic) }}
+                {{ form_row(form.message) }}
 
-        {{ form_rest(form) }}
+                {{ form_rest(form) }}
 
-        <input type="submit" value="Надіслати" />
-    </form>
+                <input type="submit" value="Надіслати" />
+            </form>
+        </div>
+    </div>
 {% endblock %}
