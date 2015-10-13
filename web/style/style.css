@@ -70,7 +70,7 @@ ul {
   margin: 0;
 }
 #header {
-  background: url("../img/laptop.jpg") no-repeat;
+  background: url("../design/laptop.jpg") no-repeat;
   height: 500px;
   background-size: cover;
 }
@@ -160,6 +160,7 @@ ul {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
+
 .sliderWrapper{
   height: 500px;
   background: #b7b7b7;
@@ -345,3 +346,4 @@ ul {
   font-family: "Myriad Pro";
   color: #333333;
 }
+
