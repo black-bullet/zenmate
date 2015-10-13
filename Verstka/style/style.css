@@ -120,7 +120,7 @@ ul {
   transition: all 1s ease;
 }
 .mainWrapper .our-technologies {
-  height: 580px;
+  height: 720px;
   background-color: #f9f9f9;
 }
 .mainWrapper .our-technologies h2 {
@@ -160,36 +160,36 @@ ul {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-.sliderWrapper{
+.sliderWrapper {
   height: 500px;
   background: #b7b7b7;
 }
-.sliderWrapper .owl-carousel{
+.sliderWrapper .owl-carousel {
   position: relative;
   margin: 0 auto;
   margin-top: 20px;
   width: 750px;
 }
-.sliderWrapper h2{
+.sliderWrapper h2 {
   text-align: center;
   margin-top: 25px;
   line-height: 1.2;
   font-size: 48px;
-  color: #666666;;
+  color: #666666;
   font-family: Myriad Pro;
 }
-.sliderWrapper .owl-controls{
+.sliderWrapper .owl-controls {
   position: relative;
   font-size: 0px;
 }
-.sliderWrapper .owl-prev{
+.sliderWrapper .owl-prev {
   display: block!important;
   position: absolute;
   zoom: 1;
   width: 90px;
   height: 90px;
   background: url(../img/prev_arr.png) center center no-repeat;
-  top:-220px;
+  top: -220px;
   left: 50%;
   margin-left: -480px;
   opacity: 0.4;
@@ -199,7 +199,7 @@ ul {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.sliderWrapper .owl-prev:hover{
+.sliderWrapper .owl-prev:hover {
   opacity: 1;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -207,7 +207,7 @@ ul {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.sliderWrapper .owl-next{
+.sliderWrapper .owl-next {
   display: block!important;
   position: absolute;
   zoom: 1;
@@ -224,7 +224,7 @@ ul {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.sliderWrapper .owl-next:hover{
+.sliderWrapper .owl-next:hover {
   opacity: 1;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -232,22 +232,22 @@ ul {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.footerWrapper{
+.footerWrapper {
   height: 300px;
   background: #333333;
 }
-.footerWrapper .left{
+.footerWrapper .left {
   float: left;
 }
-.footerWrapper .left img{
+.footerWrapper .left img {
   float: left;
   margin-top: 35px;
 }
-.footerWrapper .left ul{
+.footerWrapper .left ul {
   margin-top: 90px;
   float: left;
 }
-.footerWrapper .left ul li a{
+.footerWrapper .left ul li a {
   font-size: 12px;
   text-transform: uppercase;
   text-align: center;
@@ -255,13 +255,13 @@ ul {
   text-decoration: none;
   line-height: 30px;
 }
-.footerWrapper #flash_cloud{
+.footerWrapper #flash_cloud {
   float: left;
 }
-.footerWrapper .right{
+.footerWrapper .right {
   float: right;
 }
-.footerWrapper .right h3{
+.footerWrapper .right h3 {
   margin-top: 45px;
   font-size: 48px;
   line-height: 1.2;
@@ -269,19 +269,19 @@ ul {
   color: #fff;
   margin-bottom: 25px;
 }
-.footerWrapper .right p{
-    font-size: 14px;
-    color: #eee;
-    text-align: left;
-    line-height: 1.2;
+.footerWrapper .right p {
+  font-size: 14px;
+  color: #eee;
+  text-align: left;
+  line-height: 1.2;
 }
-.footerWrapper .right p.tel{
+.footerWrapper .right p.tel {
   font-size: 22px;
 }
-.footerWrapper .right p.callback{
+.footerWrapper .right p.callback {
   margin-top: 25px;
 }
-.footerWrapper .right a{
+.footerWrapper .right a {
   float: left;
   display: block;
   margin-top: 15px;
