@@ -33,3 +33,9 @@ AppBundle_homepage:
     defaults: { _controller: AppBundle:Default:index }
     requirements:
         _method: GET
+
+AppBundle_about:
+    pattern: /about
+    defaults: { _controller:AppBundle:Pages:about}
+    requirements:
+        _method: GET
