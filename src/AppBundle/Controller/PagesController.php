@@ -66,4 +66,10 @@ class PagesController extends Controller
             'tags'              => $tagWeights
         ));
     }
+
+    public function aboutAction()
+    {
+        return $this->render('AppBundle:Page:about.html.twig');
+    }
+
 }
