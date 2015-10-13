@@ -8,7 +8,7 @@
         <h1>Форма зворотнього зв`язку</h1>
     </header>
 
-    <p>Що вас цікавить</p>
+    <p>Що вас цікавить?</p>
 
     <form action="{{ path('AppBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
         {{ form_errors(form) }}
@@ -21,6 +21,6 @@
 
         {{ form_rest(form) }}
 
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Надіслати" />
     </form>
 {% endblock %}
